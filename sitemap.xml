@@ -5,34 +5,41 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/index.html</loc>
-<lastmod>2014-05-03T14:18:56-00:00</lastmod>
+<lastmod>2014-05-04T18:06:32-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2014-05-03T14:18:56-00:00</lastmod>
+<lastmod>2014-05-04T18:06:32-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2014-05-03T14:18:56-00:00</lastmod>
+<lastmod>2014-05-04T18:06:32-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2014-05-03T14:18:56-00:00</lastmod>
+<lastmod>2014-05-04T18:06:32-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/linux/2.html</loc>
+<loc>/linux/my-super-post.html</loc>
+<lastmod>2014-05-04T00:00:00-00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/linux/markdown.html</loc>
 <lastmod>2014-04-26T15:00:00-00:00</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
@@ -47,7 +54,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/linux/index.html</loc>
-<lastmod>2014-04-26T15:00:00-00:00</lastmod>
+<lastmod>2014-05-04T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -55,6 +62,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/zou-jin-sheng-huo/index.html</loc>
 <lastmod>2014-04-17T00:00:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/linux.html</loc>
+<lastmod>2014-05-04T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -89,8 +103,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/lp.html</loc>
-<lastmod>2014-04-26T15:00:00-00:00</lastmod>
+<lastmod>2014-05-04T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/zou-jin-sheng-huo/my-super-post.html</loc>
+<lastmod>2014-04-17T00:00:00-00:00</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/linux/my-super-post.html</loc>
+<lastmod>2014-05-04T00:00:00-00:00</lastmod>
+<changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 

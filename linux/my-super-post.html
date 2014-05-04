@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="L&P" />
+        <meta name="copyright" content="L&P" />
+
+
+<meta name="keywords" content="Linux, Linux, " />
+
+<meta property="og:title" content="Linux下的文本处理 "/>
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/linux/my-super-post.html" />
+<meta property="og:description" content="最近有一些记录的数据总是需要处理，数据挺简单的，但是特别多。于是寻找工具来对数据进行提取、计算、求和等操作。 __Grep__最简单的字符串选取功能的工具 __sed__以行为单位的文件处理工具 __awk__小型的以字段为单位数据处理工具 Grep grep 【特殊的命令】 -A 2 -B 2 【--color=auto】 "搜索的字符串" filename -A2 after两行显示 -B2 before两行显示 -n 前面加行号 -in 不分大小写 查找特定的字符串 grep -n "the" filename_str 利用【】括号查找集合字符 grep "[a-z]oo" filename_str 行首行尾字符^、$ grep "^[^a-zA-Z]" filename_str 任意字符. 重复字符* (限定符) grep "ooo* " filename_str //前两个 ..." />
+<meta property="og:site_name" content="愤怒的小鸟" />
+<meta property="og:article:author" content="L&P" />
+<meta property="og:article:published_time" content="2014-05-04T00:00:00" />
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux下的文本处理 ">
+<meta name="twitter:description" content="最近有一些记录的数据总是需要处理，数据挺简单的，但是特别多。于是寻找工具来对数据进行提取、计算、求和等操作。 __Grep__最简单的字符串选取功能的工具 __sed__以行为单位的文件处理工具 __awk__小型的以字段为单位数据处理工具 Grep grep 【特殊的命令】 -A 2 -B 2 【--color=auto】 "搜索的字符串" filename -A2 after两行显示 -B2 before两行显示 -n 前面加行号 -in 不分大小写 查找特定的字符串 grep -n "the" filename_str 利用【】括号查找集合字符 grep "[a-z]oo" filename_str 行首行尾字符^、$ grep "^[^a-zA-Z]" filename_str 任意字符. 重复字符* (限定符) grep "ooo* " filename_str //前两个 ...">
+
+        <title>Linux下的文本处理  · 愤怒的小鸟
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/theme/css/pygments.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/tipuesearch/tipuesearch.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/elegant.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/theme/css/custom.css" media="screen">
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/"><span class=site-name>愤怒的小鸟</span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="">首页</a></li>
+                            <li ><a href="/categories.html">日志分类</a></li>
+                            <li ><a href="/tags.html">标签</a></li>
+                            <li ><a href="/archives.html">存档</a></li>
+                            <li><form class="navbar-search" action="/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h1><a href="/linux/my-super-post.html"> Linux下的文本处理  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            <p id="list-of-translations">
+This post is also available in:
+    <a href="/zou-jin-sheng-huo/my-super-post.html">zh</a></p>
+
+            <p>最近有一些记录的数据总是需要处理，数据挺简单的，但是特别多。于是寻找工具来对数据进行提取、计算、求和等操作。</p>
+<ul>
+<li>__Grep__最简单的字符串选取功能的工具</li>
+<li>__sed__以行为单位的文件处理工具</li>
+<li>__awk__小型的以字段为单位数据处理工具</li>
+</ul>
+<hr />
+<h2>Grep</h2>
+<div class="highlight"><pre><span class="nb">grep</span>  <span class="err">【特殊的命令】</span> <span class="o">-</span><span class="n">A</span>  <span class="mi">2</span>  <span class="o">-</span><span class="n">B</span>  <span class="mi">2</span> <span class="err">【</span><span class="o">--</span><span class="n">color</span><span class="o">=</span><span class="n">auto</span><span class="err">】</span> <span class="s">&quot;搜索的字符串&quot;</span>  <span class="n">filename</span>
+</pre></div>
+
+
+<p>-A2 after两行显示     <br />
+-B2 before两行显示<br />
+-n 前面加行号  <br />
+-in 不分大小写   </p>
+<ol>
+<li>
+<p><strong>查找特定的字符串</strong></p>
+<div class="highlight"><pre><span class="nb">grep</span> <span class="o">-</span><span class="n">n</span> <span class="s">&quot;the&quot;</span>  <span class="n">filename_str</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>利用【】括号查找集合字符</strong></p>
+<div class="highlight"><pre><span class="nb">grep</span> <span class="s">&quot;[a-z]oo&quot;</span> <span class="n">filename_str</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>行首行尾字符^、$</strong></p>
+<div class="highlight"><pre><span class="nb">grep</span>  <span class="s">&quot;^[^a-zA-Z]&quot;</span>  <span class="n">filename_str</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>任意字符.  重复字符* (限定符)</strong></p>
+<div class="highlight"><pre><span class="nb">grep</span> <span class="s">&quot;ooo* &quot;</span> <span class="n">filename_str</span>   <span class="sr">//</span><span class="err">前两个</span><span class="n">oo</span><span class="err">肯定要存在，第三个</span><span class="n">o</span><span class="err">就是可有可无的多个</span><span class="n">oo</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>任意数字</strong></p>
+<div class="highlight"><pre><span class="nb">grep</span> <span class="err">“【</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="err">】【</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="err">】</span><span class="o">*</span><span class="err">”</span>  <span class="n">filename_str</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>限定重复字符的范围{}</strong></p>
+<div class="highlight"><pre><span class="nb">grep</span> <span class="s">&quot;o\{2\}&quot;</span> <span class="n">filename_str</span>     <span class="sr">//</span><span class="err">找到两个</span><span class="n">o</span><span class="err">的字符</span>  <span class="err">注意：</span>  <span class="o">\</span><span class="p">}</span>  <span class="err">是因为</span><span class="p">{}</span> <span class="err">在</span><span class="n">shell</span><span class="err">有特殊含义，要使用转意字符</span><span class="o">\</span>
+<span class="nb">grep</span> <span class="s">&quot;o\{2，5\}&quot;</span> <span class="n">filename_str</span>  <span class="sr">//</span><span class="err">找到</span><span class="mi">2</span><span class="o">-</span><span class="mi">5</span><span class="err">个</span><span class="n">o</span><span class="err">的字符</span>
+</pre></div>
+
+
+</li>
+</ol>
+<h2>sed工具 (管道工具)</h2>
+<p>sed本身是一个管道命令，可以将数据进行替换、删除、新增、选取特定行等功能。  </p>
+<div class="highlight"><pre><span class="n">sed</span>     <span class="p">[</span><span class="o">-</span><span class="n">nefr</span><span class="p">]</span>   <span class="err">动作（</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">function</span><span class="err">）</span>
+</pre></div>
+
+
+<p>-nefr几个命令先不管，(-n 只显示经过处理行数据)重点是function的操作<br />
+具体有以下function操作：  <br />
+a   ：新增， a 的後面可以接字串，而這些字串會在新的一行出現(目前的下一行) <br />
+c   ：取代， c 的後面可以接字串，這些字串可以取代 n1,n2 之間的行！  <br />
+d   ：刪除，因為是刪除啊，所以 d 後面通常不接任何咚咚； 
+i   ：插入， i 的後面可以接字串，而這些字串會在新的一行出現(目前的上一行) <br />
+p   ：列印，亦即將某個選擇的資料印出。通常 p 會與參數 sed -n 一起運作<br />
+s   ：取代，可以直接進行取代的工作哩！通常這個 s 的動作可以搭配 </p>
+<ol>
+<li>
+<p><strong>以行为单位的新增/删除功能</strong></p>
+<div class="highlight"><pre><span class="n">nl</span> <span class="sr">/etc/</span><span class="n">passwd</span>   <span class="o">|</span><span class="n">sed</span> <span class="s">&quot;2,5d&quot;</span>     <span class="sr">//</span><span class="err">删除</span><span class="mi">2</span><span class="o">~</span><span class="mi">5</span><span class="err">行</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>以行为单位替换，显示</strong></p>
+<div class="highlight"><pre><span class="n">nl</span> <span class="sr">/etc/</span><span class="n">passwd</span>   <span class="o">|</span><span class="n">sed</span>    <span class="s">&quot;1,5c  NO 2-5 number&quot;</span>    <span class="sr">//</span><span class="err">替换</span><span class="mi">2</span><span class="err">～</span><span class="mi">5</span><span class="err">行间整行数据</span>
+<span class="n">nl</span> <span class="sr">/etc/</span><span class="n">passwd</span>   <span class="o">|</span><span class="n">sed</span> <span class="o">-</span><span class="n">n</span>   <span class="s">&#39;5,7p&#39;</span>   <span class="sr">//</span><span class="err">显示</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>部分数据查找并替换</strong></p>
+<div class="highlight"><pre><span class="n">sed</span> <span class="s">&#39;s/要被替换的字符串/新的字符串/g&#39;</span>
+<span class="n">nl</span> <span class="sr">/etc/</span><span class="n">passwd</span> <span class="o">|</span><span class="n">sed</span> <span class="s">&quot;1,20s/old/new/g&quot;</span>
+<span class="n">ifconfig</span>  <span class="n">eth0</span> <span class="o">|</span><span class="nb">grep</span> <span class="s">&quot;inet &quot;</span><span class="o">|</span> <span class="n">sed</span> <span class="s">&quot;s/^.*inet/haha/g &quot;</span>
+</pre></div>
+
+
+</li>
+</ol>
+<h2>awk 数据处理</h2>
+<div class="highlight"><pre><span class="n">awk</span> <span class="err">“条件类型</span><span class="mi">1</span><span class="p">{</span><span class="err">动作</span><span class="mi">1</span><span class="p">}</span> <span class="err">条件类型</span><span class="mi">2</span><span class="p">{</span><span class="err">动作</span><span class="mi">2</span><span class="p">}</span> <span class="err">。。。“</span><span class="n">filename</span>
+</pre></div>
+
+
+<p>awk主要处理没一行字段内的数据，awk 後面接兩個單引號並加上大括號 {} 來設定想要對資料進行的處理動作。 
+awk可以處理後續接的檔案，也可以讀取來自前個指令的 standard output 。而默认的字段分隔符號為 "空白鍵" 或 "[tab]鍵"  <br />
+整個 awk 的處理流程是：    <br />
+讀入第一行，並將第一行的資料填入 $0, $1, $2.... 等变量当中；    <br />
+依據 "條件類型" 的限制，判斷是否需要進行後面的 "動作"<br />
+做完所有的動作與條件類型； <br />
+若還有后续的『行』的資料，則重複上面 1~3 的步驟，直到所有的資料都讀完為止     </p>
+<ol>
+<li>
+<p><strong>每一行的字段都是有名称，$1第一列，$2第二列，  $0代表一整行数据.</strong>   <br />
+下面举出一些列子来说明。</p>
+<div class="highlight"><pre><span class="p">[</span><span class="n">root</span><span class="nv">@www</span> <span class="o">~</span><span class="p">]</span><span class="c1"># last -n 5 | awk &#39;{print $1 &quot;\t&quot; $3}&#39;</span>
+<span class="n">root</span>    <span class="mf">192.168.1.100</span>
+<span class="n">root</span>    <span class="mf">192.168.1.100</span>
+<span class="n">root</span>    <span class="mf">192.168.1.100</span>
+<span class="n">dmtsai</span>  <span class="mf">192.168.1.100</span>
+<span class="n">root</span>    <span class="n">Fri</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>awk 的内建变量，数据的行数、列数</strong> <br />
+NF 每一行($0)拥有的字段数  <br />
+NR 目前awk所处理的是『第几行』数据  <br />
+FS 目前分隔字节，默认是空白</p>
+<div class="highlight"><pre><span class="p">[</span><span class="n">root</span><span class="nv">@www</span> <span class="o">~</span><span class="p">]</span><span class="c1"># last -n 5| awk &#39;{print $1 &quot;\t lines: &quot; NR “\t columns: &quot; NF}&#39;</span>
+<span class="n">root</span>     <span class="n">lines:</span> <span class="mi">1</span>        <span class="n">columns:</span> <span class="mi">10</span>
+<span class="n">root</span>     <span class="n">lines:</span> <span class="mi">2</span>        <span class="n">columns:</span> <span class="mi">10</span>
+<span class="n">root</span>     <span class="n">lines:</span> <span class="mi">3</span>        <span class="n">columns:</span> <span class="mi">10</span>
+<span class="n">dmtsai</span>   <span class="n">lines:</span> <span class="mi">4</span>        <span class="n">columns:</span> <span class="mi">10</span>
+<span class="n">root</span>     <span class="n">lines:</span> <span class="mi">5</span>        <span class="n">columns:</span> <span class="mi">9</span>
+<span class="c1"># 注意喔，在 awk 内的 NR, NF 等变量要用大写，且不需要有钱字号 $ 啦！</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>逻辑运算</strong> 
+既然有需要用到 "条件" 的类别，自然就需要一些逻辑运算罗～例如<code>&gt; 、&lt; 、&gt;= 、&lt;= 、==</code>等。
+例子：输出第三列小于10的数据</p>
+<div class="highlight"><pre><span class="p">[</span><span class="n">root</span><span class="nv">@www</span> <span class="o">~</span><span class="p">]</span><span class="c1"># cat /etc/passwd | awk &#39;{FS=&quot;:&quot;} $3 &lt; 10 {print $1 &quot;\t &quot; $3}&#39;</span>
+<span class="n">root:x:0:0:root:</span><span class="sr">/root:/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
+<span class="n">bin</span>      <span class="mi">1</span>
+<span class="n">daemon</span>   <span class="mi">2</span>
+<span class="o">....</span><span class="p">(</span><span class="err">以下省略</span><span class="p">)</span><span class="o">....</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>BEGIN关键字</strong> 
+读入第一行的時候，那些变量$1, $2... 預設還是以空白鍵為分隔的，所以雖然我們定義了 FS=":" 了， 但是卻僅能在第二行後才開始生效。
+那麼怎麼辦呢？我們可以預先設定 awk 的变量，利用 BEGIN 這個關鍵字。</p>
+<div class="highlight"><pre><span class="p">[</span><span class="n">root</span><span class="nv">@www</span> <span class="o">~</span><span class="p">]</span><span class="c1"># cat /etc/passwd | awk &#39;BEGIN {FS=&quot;:&quot;} $3 &lt; 10 {print $1 &quot;\t &quot; $3}&#39;</span>
+<span class="n">root</span>     <span class="mi">0</span>
+<span class="n">bin</span>      <span class="mi">1</span>
+<span class="n">daemon</span>   <span class="mi">2</span>
+<span class="o">......</span><span class="p">(</span><span class="err">以下省略</span><span class="p">)</span><span class="o">......</span>
+</pre></div>
+
+
+</li>
+<li>
+<p><strong>计算功能</strong> 
+資料表檔名為 pay.txt ，內容是這樣的：   <br />
+Name    1st     2nd     3th   <br />
+VBird   23000   24000   25000 <br />
+DMTsai  21000   20000   23000 <br />
+Bird2   43000   42000   41000 <br />
+第一行只是說明，所以第一行不要進行加總 (NR==1 時處理) 
+第二行以後就會有加總的情況出現 (NR&gt;=2 以後處理)        </p>
+<div class="highlight"><pre><span class="p">[</span><span class="n">root</span><span class="nv">@www</span> <span class="o">~</span><span class="p">]</span><span class="c1"># cat pay.txt | \</span>
+<span class="o">&gt;</span> <span class="n">awk</span> <span class="s">&#39;NR==1{printf &quot;%10s %10s %10s %10s %10s\n&quot;,$1,$2,$3,$4,&quot;Total&quot; }</span>
+<span class="s">NR&gt;=2{total = $2 + $3 + $4 ;printf &quot;%10s %10d %10d %10d %10.2f\n&quot;, $1, $2, $3, $4, total}&#39;</span>
+</pre></div>
+
+
+</li>
+</ol>
+            
+            
+            <hr/>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2014-05-04T00:00:00">May 4, 2014</time>
+            <h4>Category</h4>
+            <a class="category-link" href="/categories.html#linux-ref">Linux</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="/tags.html#linux-ref">Linux
+                    <span>1</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+    <a href="http://www.cnblogs.com" title="My 博客园 Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-博客园 sidebar-social-links"></i></a>
+    <a href="i" title="My G Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-t sidebar-social-links"></i></a>
+        </div>
+        </section>
+</div>
+
+<!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"tonypuck"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+
+
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>
