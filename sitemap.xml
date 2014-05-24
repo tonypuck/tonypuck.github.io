@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/index.html</loc>
-<lastmod>2014-05-12T21:52:32-00:00</lastmod>
+<lastmod>2014-05-24T20:56:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2014-05-12T21:52:32-00:00</lastmod>
+<lastmod>2014-05-24T20:56:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2014-05-12T21:52:32-00:00</lastmod>
+<lastmod>2014-05-24T20:56:24-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2014-05-12T21:52:32-00:00</lastmod>
+<lastmod>2014-05-24T20:56:24-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/linuxc/vim使用简介.html</loc>
+<lastmod>2014-05-24T15:00:00-00:00</lastmod>
+<changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -74,6 +81,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/linuxc/index.html</loc>
+<lastmod>2014-05-24T15:00:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/zou-jin-sheng-huo/index.html</loc>
 <lastmod>2014-04-17T00:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
@@ -83,6 +97,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>/tag/pelican.html</loc>
 <lastmod>2014-04-26T15:00:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/c.html</loc>
+<lastmod>2014-05-24T15:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -117,14 +138,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/tag/linux.html</loc>
-<lastmod>2014-05-04T00:00:00-00:00</lastmod>
+<lastmod>2014-05-24T15:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/author/lp.html</loc>
-<lastmod>2014-05-12T00:00:00-00:00</lastmod>
+<lastmod>2014-05-24T15:00:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
